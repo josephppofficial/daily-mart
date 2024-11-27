@@ -23,7 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('adminapp.urls')),
     path('', include('userapp.urls')),
-    path('', views.home, name='home'), 
+    path('', views.home, name='home'),
+    path('', include('restapp.urls')) 
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,

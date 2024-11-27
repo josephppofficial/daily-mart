@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-67fp8#2zwmmoi$+qu$^st9wr@48)!7)x+$gmba47jmy8nas=c$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.versal.app']
 
 
 # Application definition
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'adminapp',
-    'userapp'
+    'userapp',
+    'restapp',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
