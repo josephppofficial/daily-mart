@@ -1,18 +1,15 @@
 {
+    "version": 2,
     "builds": [
         {
-            "src": "dailymart/wsgi.py",
-            "use": "@vercel/python",
-            "config": {
-                "maxLambdaSize": "15mb",
-                "runtime": "python3.6.9"
-            }
+            "src": "requirements.txt",
+            "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "dailymart/wsgi.py"
+            "dest": "/api/{{slug}}"
         }
     ]
 }
