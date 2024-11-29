@@ -1,15 +1,12 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "requirements.txt",
-            "use": "@vercel/python"
-        }
+      { "src": "manage.py", "use": "@vercel/python" },
+      { "src": "staticfiles/**/*", "use": "@vercel/static" }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/api/{{slug}}"
-        }
+      { "src": "/static/(.*)", "dest": "/staticfiles/$1" },
+      { "src": "/(.*)", "dest": "manage.py" }
     ]
-}
+  }
+  
