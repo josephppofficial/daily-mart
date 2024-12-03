@@ -1,12 +1,18 @@
 {
-    "version": 2,
     "builds": [
-      { "src": "manage.py", "use": "@vercel/python" },
-      { "src": "staticfiles/**/*", "use": "@vercel/static" }
+        {
+            "src": "dailymart/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.6.9"
+            }
+        }
     ],
     "routes": [
-      { "src": "/static/(.*)", "dest": "/staticfiles/$1" },
-      { "src": "/(.*)", "dest": "manage.py" }
+        {
+            "src": "/(.*)",
+            "dest": "dailymart/wsgi.py"
+        }
     ]
-  }
-  
+}
